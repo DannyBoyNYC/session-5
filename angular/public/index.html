@@ -1,39 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app>
 <head>
 	<head>
 		<meta charset="UTF-8">
 		<title>Ang Barclays Live</title>
+
+		<script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+
 		<script src="/js/navitems.js"></script>
 		<link rel="stylesheet" href="/css/styles.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
 
-	<body>
+		<style>
+		.even { color: red; }
+		.odd { color: blue; }
+	</style>
+</head>
 
-		<header>
-			<h1>Not on the app store!</h1>
-		</header>
+<body>
 
-		<nav id="main">
-			<a class="logo" href="#0"><img src="/img/logo.svg" /></a>
-			<ul id="nav-links">
-			</ul>
-		</nav>
+	<header>
+		<h1>Not on the app store!</h1>
+	</header>
 
-		<div class="site-wrap">
+	<nav id="main">
+		<a class="logo" href="#0"><img src="/img/logo.svg" /></a>
+		<ul id="nav-links">
+		</ul>
+	</nav>
 
-			<form action="/entries" method="POST">
-				<input type="text" placeholder="label" name="label">
-				<input type="text" placeholder="header" name="header">
-				<textarea type="text" placeholder="content" name="content"></textarea>
-				<button type="submit">Submit</button>
-			</form>
-		</div>
-		
-		<script src="/js/main.js"></script>
-	</body>
-	</html>
+	<div class="site-wrap" ng-init="portfolios = [
+	{ name: 'Call of Booty', date: '2013-09-01' },
+	{ name: 'The Sack of the Innocents', date: '2014-04-15' },
+	{ name: 'Pipe and First Mate', date: '2012-10-01' } ]">
+
+	<ul>
+  <li ng-repeat="(key, value) in portfolios">
+      <strong>{{key}}</strong> - {{value}}
+  </li>
+</ul>
+
+
+
+<form action="/entries" method="POST">
+	<input type="text" placeholder="label" name="label">
+	<input type="text" placeholder="header" name="header">
+	<textarea type="text" placeholder="content" name="content"></textarea>
+	<button type="submit">Submit</button>
+</form>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
 
 
 
