@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p.intro Welcome to #{title}
+  p.hello My animal's name is #{animal}
+  img.animal(src="animal.jpg" alt=`${animal}`)
+  - const upAnimal = animal.toUpperCase()
+  p My animal is #{upAnimal}
+  #output
