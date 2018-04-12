@@ -2,6 +2,8 @@
 
 In this session we will explore using Express with Webpack for JavaScript bundling. We will use Angular as our templating language.
 
+Adding blah
+
 ## Homework
 
 1. Watch a short video on [ES6 Modules](https://youtu.be/_3oSWwapPKQ)
